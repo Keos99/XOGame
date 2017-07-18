@@ -8,18 +8,24 @@ public class Player {
     Scanner scanner = new Scanner(System.in);
     Field field = new Field();
 
-    private char playerChar;
+    private char playerchar;
+    private char enemychar;
 
     Player(){
-        playerChar = ' ';
+        playerchar = ' ';
+        enemychar = ' ';
     }
 
-    void setPlayerChar(char ch){
-        playerChar = ch;
+    void setPlayerchar(char ch){
+        playerchar = ch;
     }
 
-    char getPlayerChar() {
-        return playerChar;
+    char getPlayerchar() {
+        return playerchar;
+    }
+
+    char getEnemychar(){
+        return enemychar;
     }
 
     void hello(){
@@ -39,49 +45,65 @@ public class Player {
 
         switch (choose){
             case 1:
-                playerChar = 'X';
+                playerchar = 'X';
+                enemychar = 'O';
                 break;
             case 2:
-                playerChar = 'O';
+                playerchar = 'O';
+                enemychar = 'X';
                 break;
         }
     }
 
-    void doShoot(){
+    void doShoot(Field field){
         int cell = 0;
+        int y = 0;
+        int x = 0;
 
-        System.out.println("Выберите клетку:");
-        cell = scanner.nextInt();
+            do {
+                System.out.println("Выберите клетку:");
+                cell = scanner.nextInt();
 
-        switch (cell){
-            case 1:
-                field.setField(0,0,playerChar);
-                break;
-            case 2:
-                field.setField(0,1,playerChar);
-                break;
-            case 3:
-                field.setField(0,2,playerChar);
-                break;
-            case 4:
-                field.setField(1,0,playerChar);
-                break;
-            case 5:
-                field.setField(1,1,playerChar);
-                break;
-            case 6:
-                field.setField(1,2,playerChar);
-                break;
-            case 7:
-                field.setField(2,0,playerChar);
-                break;
-            case 8:
-                field.setField(2,1,playerChar);
-                break;
-            case 9:
-                field.setField(2,2,playerChar);
-                break;
-        }
+            switch (cell) {
+                case 1:
+                    y = 0;
+                    x = 0;
+                    break;
+                case 2:
+                    y = 0;
+                    x = 1;
+                    break;
+                case 3:
+                    y = 0;
+                    x = 2;
+                    break;
+                case 4:
+                    y = 1;
+                    x = 0;
+                    break;
+                case 5:
+                    y = 1;
+                    x = 1;
+                    break;
+                case 6:
+                    y = 1;
+                    x = 2;
+                    break;
+                case 7:
+                    y = 2;
+                    x = 0;
+                    break;
+                case 8:
+                    y = 2;
+                    x = 1;
+                    break;
+                case 9:
+                    y = 2;
+                    x = 2;
+                    break;
+            }
+        }while (field.isCellEmpty(y,x));
+            field.setField(y,x, playerchar);
     }
 
 }

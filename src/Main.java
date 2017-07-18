@@ -4,8 +4,17 @@
 public class Main {
     public static void main(String[] args) {
         Field field = new Field();
+        Player player = new Player();
+        Comp comp = new Comp();
 
         field.fieldInit();
+        player.menu();
+        do {
+            field.showField();
+            player.doShoot(field);
+            field.isGameOver(player.getPlayerchar(),player);
+            comp.doShoot(field, player);
+        } while (field.isGameOver(player.getPlayerchar(),player));
         field.showField();
     }
 }
