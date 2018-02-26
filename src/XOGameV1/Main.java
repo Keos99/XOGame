@@ -1,3 +1,8 @@
+package XOGameV1;
+
+import XOGameV1.Comp;
+import XOGameV1.Field;
+
 /**
  * Created by Keos99 on 17.07.2017.
  */

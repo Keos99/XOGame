@@ -1,3 +1,5 @@
+package XOGameV1;
+
 import java.util.Scanner;
 
 /**
@@ -6,7 +8,7 @@ import java.util.Scanner;
 public class Player {
 
     Scanner scanner = new Scanner(System.in);
-    Field field = new Field();
+    Field field;
 
     private char playerchar;
     private char enemychar;

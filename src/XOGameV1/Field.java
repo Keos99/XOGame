@@ -1,3 +1,5 @@
+package XOGameV1;
+
 /**
  * Created by Keos99 on 17.07.2017.
  */
@@ -64,15 +66,13 @@ public class Field {
         return cell;
     }
 
-    String messageForIGO(char ch, Player player){
-        String endmessage = " ";
+    void messageForIGO(char ch){
         if (ch == player.getPlayerchar()){
-            endmessage = ("Вы выйграли!!!!");
+            System.out.println("Вы выйграли!!!!");
         }
         else {
-            endmessage = ("Вы проиграли!!!!");
+            System.out.println("Вы проиграли!!!!");
         }
-        return endmessage;
     }
 
     boolean isGameOver (char ch, Player player){
@@ -80,35 +80,35 @@ public class Field {
 
         if (charToIntForIGO(0,0, ch) == 1 && charToIntForIGO(0,1, ch) == 1 && charToIntForIGO(0,2, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(1,0, ch) == 1 && charToIntForIGO(1,1, ch) == 1 && charToIntForIGO(1,2, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(2,0, ch) == 1 && charToIntForIGO(2,1, ch) == 1 && charToIntForIGO(2,2, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(0,0, ch) == 1 && charToIntForIGO(1,0, ch) == 1 && charToIntForIGO(2,0, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(0,1, ch) == 1 && charToIntForIGO(1,1, ch) == 1 && charToIntForIGO(2,1, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(0,2, ch) == 1 && charToIntForIGO(1,2, ch) == 1 && charToIntForIGO(2,2, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(0,0, ch) == 1 && charToIntForIGO(1,1, ch) == 1 && charToIntForIGO(2,2, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
         else if (charToIntForIGO(0,2, ch) == 1 && charToIntForIGO(1,1, ch) == 1 && charToIntForIGO(2,0, ch) == 1){
             igo = false;
-            messageForIGO(ch,player);
+            messageForIGO(ch);
         }
 
         return igo;
